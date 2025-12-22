@@ -1,1 +1,29 @@
-<p>user-profile works!</p>
+<div class="card">
+  <div class="header">
+    <div class="title">Профіль користувача</div>
+    <div class="status" [attr.data-status]="user.status">
+      {{ user.status }}
+    </div>
+  </div>
+
+  <div class="row"><span>ID:</span> <b>{{ user.id }}</b></div>
+  <div class="row"><span>Ім’я:</span> <b>{{ user.name }}</b></div>
+
+  <div class="section">
+    <div class="section-title">Адреса</div>
+    <div class="row"><span>Місто:</span> <b>{{ user.address.city }}</b></div>
+    <div class="row"><span>Вулиця:</span> <b>{{ user.address.street }}</b></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      Хобі ({{ getHobbiesCount() }})
+    </div>
+
+    <ul class="hobbies">
+      <li *ngFor="let hobby of user.hobbies; let i = index">
+        {{ i + 1 }}. {{ hobby }}
+      </li>
+    </ul>
+  </div>
+</div>
