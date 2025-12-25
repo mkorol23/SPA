@@ -1,1 +1,35 @@
-<p>products-table works!</p>
+<div class="wrap">
+  <h2>Динамічна таблиця товарів</h2>
+
+  <table class="tbl">
+    <thead>
+      <tr>
+        <th>Назва</th>
+        <th>Категорія</th>
+        <th>Ціна</th>
+        <th>Наявність</th>
+        <th>Статус ціни</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let p of products"
+          [ngStyle]="{ 'background-color': p.stockCount === 0 ? '#ffe6e6' : 'transparent' }">
+        <td>{{ p.name }}</td>
+        <td>{{ p.category }}</td>
+        <td>{{ p.price }} грн</td>
+
+        <td>
+          <span *ngIf="p.stockCount > 0; else outOfStock">✅ ({{ p.stockCount }})</span>
+          <ng-template #outOfStock>❌ (0)</ng-template>
+        </td>
+
+        <td [ngSwitch]="true">
+          <span *ngSwitchCase="p.price < 50">Низька</span>
+          <span *ngSwitchCase="p.price >= 50 && p.price <= 200">Середня</span>
+          <span *ngSwitchDefault>Висока</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
