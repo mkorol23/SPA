@@ -1,11 +1,13 @@
-<app-header></app-header>
+<h2>Демонстрація конфігурованої директиви</h2>
 
-<div style="display: flex; gap: 16px; min-height: 70vh;">
-  <app-sidebar></app-sidebar>
+<p [highlightColor]="'cyan'" configurableHighlight>
+  Це абзац із блакитним підсвічуванням
+</p>
 
-  <app-main-content>
-    <app-quiz></app-quiz>
-  </app-main-content>
+<div [highlightColor]="'lightgreen'" configurableHighlight>
+  Це блок із зеленим підсвічуванням
 </div>
 
-<app-footer></app-footer>
+<p configurableHighlight>
+  Цей текст використовує стандартний жовтий колір
+</p>

@@ -7,6 +7,8 @@ import { MainContent } from './main-content/main-content';
 import { UserProfile } from './user-profile/user-profile';
 import { ProductsTable } from './products-table/products-table';
 import { QuizComponent } from './quiz/quiz';
+import { ConfigurableHighlightDirective } from './configurable-highlight.directive';
+
 
 
 
@@ -20,6 +22,7 @@ import { QuizComponent } from './quiz/quiz';
     MainContent,
     ProductsTable,
     QuizComponent,
+    ConfigurableHighlightDirective,
     UserProfile
   ],
   templateUrl: './app.html',
