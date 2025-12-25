@@ -5,6 +5,7 @@ import { Footer } from './footer/footer';
 import { Sidebar } from './sidebar/sidebar';
 import { MainContent } from './main-content/main-content';
 import { UserProfile } from './user-profile/user-profile';
+import { ProductsTable } from './products-table/products-table';
 
 
 @Component({
@@ -14,7 +15,8 @@ import { UserProfile } from './user-profile/user-profile';
     Header,
     Footer,
     Sidebar,
-    MainContent
+    MainContent,
+    ProductsTable,
     UserProfile
   ],
   templateUrl: './app.html',
