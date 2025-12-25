@@ -1,0 +1,28 @@
+.question-box {
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 12px;
+  max-width: 500px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+  li.selected {
+    background-color: #e3f2fd;
+  }
+
+  li.correct {
+    background-color: #c8f7c5;
+    font-weight: bold;
+  }
