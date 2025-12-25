@@ -6,6 +6,8 @@ import { Sidebar } from './sidebar/sidebar';
 import { MainContent } from './main-content/main-content';
 import { UserProfile } from './user-profile/user-profile';
 import { ProductsTable } from './products-table/products-table';
+import { QuizComponent } from './quiz/quiz';
+
 
 
 @Component({
@@ -17,6 +19,7 @@ import { ProductsTable } from './products-table/products-table';
     Sidebar,
     MainContent,
     ProductsTable,
+    QuizComponent,
     UserProfile
   ],
   templateUrl: './app.html',
