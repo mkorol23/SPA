@@ -1,31 +1,23 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { Header } from './header/header';
-import { Footer } from './footer/footer';
-import { Sidebar } from './sidebar/sidebar';
-import { MainContent } from './main-content/main-content';
-import { UserProfile } from './user-profile/user-profile';
-import { ProductsTable } from './products-table/products-table';
-import { QuizComponent } from './quiz/quiz';
-import { ConfigurableHighlightDirective } from './configurable-highlight.directive';
-
-
-
+import { AppLogicService } from './app-logic';
+import { DataService } from './data';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    Header,
-    Footer,
-    Sidebar,
-    MainContent,
-    ProductsTable,
-    QuizComponent,
-    ConfigurableHighlightDirective,
-    UserProfile
-  ],
+  imports: [CommonModule],
+  providers: [DataService],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App { }
+export class App {
+  data: string[] = [];
+
+  constructor(private appLogic: AppLogicService) { }
+
+  loadData() {
+    this.data = this.appLogic.getDataAndLog();
+  }
+}

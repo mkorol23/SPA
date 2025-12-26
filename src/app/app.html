@@ -1,13 +1,9 @@
-<h2>Демонстрація конфігурованої директиви</h2>
+<h2>Практична робота №6 — Ієрархія сервісів</h2>
 
-<p [highlightColor]="'cyan'" configurableHighlight>
-  Це абзац із блакитним підсвічуванням
-</p>
+<button (click)="loadData()">Отримати дані</button>
 
-<div [highlightColor]="'lightgreen'" configurableHighlight>
-  Це блок із зеленим підсвічуванням
-</div>
+<ul *ngIf="data.length > 0">
+  <li *ngFor="let item of data">{{ item }}</li>
+</ul>
 
-<p configurableHighlight>
-  Цей текст використовує стандартний жовтий колір
-</p>
+<p *ngIf="data.length === 0">Дані ще не завантажені.</p>
