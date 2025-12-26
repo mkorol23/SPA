@@ -8,7 +8,7 @@ import { DataService } from './data';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule],
-  providers: [DataService],
+  providers: [DataService, AppLogicService],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
